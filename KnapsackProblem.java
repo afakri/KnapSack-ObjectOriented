@@ -66,11 +66,8 @@ public class KnapsackProblem{
         BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
         initialize(sc);
         ArrayList<Knapsack> elem=combinations(items);
+        System.out.println(bestSac.toString());
         
-
-        
-
-
     }
 
 
@@ -100,6 +97,13 @@ public class KnapsackProblem{
             items.add(index,item);
             capacity-=item.getWeight();
             value+=item.getValue();
+        }
+        public String toString(){
+            String sol =getValue()+"\n";
+            for(Item i:items){
+                sol+=i.getName()+" ";
+            }
+            return sol;
         }
 
         public void remove(int index){
