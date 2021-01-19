@@ -6,9 +6,8 @@ public class KnapsackProblem{
     private static String approach ;
     private static Knapsack bestSac;
     private static Item[] items;
-    private static String bestSol ="";
     private static int  cap;
-    private static int val=0;
+    private static String bestsol;
 
 
     public static void initialize(BufferedReader in){
@@ -29,8 +28,9 @@ public class KnapsackProblem{
         
 
     }
-    public static int bruteForce(int index,String sol, int c){
+    /*public static int bruteForce(int index,String sol, int c){
         int vin,vex;
+        Knapsack sac = new Knapsack(numberItems);
         if(index==numberItems || c<=0){
             return 0;
         }
@@ -43,20 +43,47 @@ public class KnapsackProblem{
             
             vex = bruteForce(index+1, sol,c);
             return vex;
+        }  
+
+    }*/
+    
+    public static ArrayList<ArrayList<Integer>> combinations(ArrayList<Integer> elements){
+        if(elements.size()==0){
+            ArrayList<ArrayList<Integer>> empty = new ArrayList<ArrayList<Integer>>();
+            ArrayList<Integer> emp = new ArrayList<>();
+            empty.add(emp);
+            return empty;
         }
-        
-
-        
-
+        int first=elements.get(0);
+        ArrayList<Integer>rest =(ArrayList<Integer>) elements.clone();
+        rest.remove(0);
+        ArrayList<ArrayList<Integer>> combsWithoutFirst = combinations(rest);
+        ArrayList<ArrayList<Integer>> combsWithFirst = new ArrayList<ArrayList<Integer>>();
+        for(ArrayList<Integer> i: combsWithoutFirst){
+             ArrayList<Integer> combWithFirst = (ArrayList<Integer>) i.clone();
+             combWithFirst.add(Integer.valueOf(first));
+             combsWithFirst.add(combWithFirst);
+        }
+        combsWithFirst.addAll(combsWithoutFirst);
+        return combsWithFirst;
     }
+
     public void dynamic(){
         //*******TODO*********
     }
     
     public static void main(String[] args) {
-        BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
-        initialize(sc);
-        System.out.println(bruteForce(0,"",cap));
+       // BufferedReader sc = new BufferedReader(new InputStreamReader(System.in));
+        //initialize(sc);
+        ArrayList<Integer> elements = new ArrayList<Integer>();
+        elements.add(1);
+        elements.add(2);
+        elements.add(3);
+        ArrayList<ArrayList<Integer>> elem=combinations(elements);
+        System.out.println(combinations(elements));
+
+        
+
 
     }
 
