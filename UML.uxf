@@ -1,0 +1,42 @@
+<diagram program="umletino" version="14.4.0-SNAPSHOT"><zoom_level>10</zoom_level><help_text>Space for diagram notes</help_text><element><id>UMLClass</id><coordinates><x>47</x><y>140</y><w>100</w><h>50</h></coordinates><panel_attributes>KnapsackProblem
+--
++void main()</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>227</x><y>140</y><w>350</w><h>200</h></coordinates><panel_attributes>KnapsackSolution
+--
+-int numberItems
+-Knapsack sac
+-Knapsack bestSac
+-ArrayList&lt;Item&gt; items
+-int cap
+-int bestvalue = 0
+--
++void initialize(BufferedReader in) 
++ArrayList&lt;Knapsack&gt;bruteForce(ArrayList&lt;Item&gt; elements)  
++Knapsack dynamic() 
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>140</y><w>190</w><h>140</h></coordinates><panel_attributes>Knapsack
+--
+-ArrayList&lt;Item&gt; items
+-int capacity
+-int value;
+--
++String toString()
++Knapsack clone(Knapsack)
++Knapsack clone(Knapsack,int)
+
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>507</x><y>130</y><w>180</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*</panel_attributes><additional_attributes>160;20;160;20</additional_attributes></element><element><id>Relation</id><coordinates><x>137</x><y>140</y><w>110</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;90;10</additional_attributes></element><element><id>UMLClass</id><coordinates><x>667</x><y>360</y><w>120</w><h>130</h></coordinates><panel_attributes>Item
+--
+-int value
+-int weight
+-String name
+--
++int getValue()
++int getWeight()
++String getName()
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>717</x><y>270</y><w>30</w><h>110</h></coordinates><panel_attributes>lt=-
+m1=*
+m2=*</panel_attributes><additional_attributes>10;90;10;10</additional_attributes></element><element><id>Relation</id><coordinates><x>567</x><y>150</y><w>120</w><h>40</h></coordinates><panel_attributes>lt=-
+m1=1
+m2=*</panel_attributes><additional_attributes>10;10;100;10</additional_attributes></element></diagram>
